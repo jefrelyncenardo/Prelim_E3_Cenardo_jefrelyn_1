@@ -1,0 +1,25 @@
+import React, { useState } from 'react';
+import UserInfo from './UserInfo';
+import ProfilePicture from './ProfilePicture';
+
+function Profile({ darkMode }) {
+  const [user, setUser] = useState({ name: 'John Doe', settings: { darkMode: false } });
+
+  const handleNameChange = (event) => {
+    setUser({ ...user, name: event.target.value });
+  };
+
+  return (
+    <div className={`container ${darkMode ? 'bg-dark text-light' : ''}`}>
+      <h1>Profile</h1>
+      <div>
+        <label htmlFor="name">Name:</label>
+        <input type="text" id="name" value={user.name} onChange={handleNameChange} />
+      </div>
+      <UserInfo name={user.name} />
+      <ProfilePicture />
+    </div>
+  );
+}
+
+export default Profile;

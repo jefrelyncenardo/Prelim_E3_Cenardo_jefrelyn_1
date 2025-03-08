@@ -1,0 +1,8 @@
+/* index.css or within a styled-component */
+.bg-dark {
+    background-color: #343a40 !important; /* Or your preferred dark background */
+  }
+  
+  .text-light {
+    color: white !important;
+  }
